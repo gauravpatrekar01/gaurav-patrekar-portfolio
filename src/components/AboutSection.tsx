@@ -30,7 +30,7 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <div>
-            <p className="text-accent font-medium tracking-wide mb-3">About Me</p>
+            <p className="text-accent font-medium tracking-wide mb-3">My Journey</p>
             <h2 className="section-title">
               Building the Future,{' '}
               <span className="text-gradient-gold">One Line at a Time</span>
@@ -38,21 +38,36 @@ const AboutSection = () => {
             
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                I'm a Computer Science and Business Systems student at KIT's College of Engineering, 
-                driven by a passion for creating impactful software solutions. With a strong foundation 
-                in programming, data structures, and algorithms, I approach every project with a 
-                problem-solving mindset.
+                My journey into technology began with a strong curiosity about how software systems work 
+                behind the scenes and how logical thinking can be used to solve real-world problems. As a 
+                Computer Science Engineering student, I started by building a solid foundation in programming, 
+                data structures, and problem-solving, which helped me understand not just how to write code, 
+                but how to think like a developer.
               </p>
               <p>
-                My experience spans web development, backend logic, and database management. I believe 
-                in writing clean, performant, and scalable code that stands the test of time. Currently 
-                pursuing an Honours specialization in Blockchain Technology, I'm fascinated by the 
-                potential of decentralized systems.
+                In the early phase of my learning, I focused on understanding core programming concepts using 
+                languages like Python and Java. Instead of limiting myself to theory, I actively applied what 
+                I learned by building small programs and gradually moving toward complete applications. This 
+                hands-on approach strengthened my confidence and improved my ability to design structured, 
+                maintainable logic.
               </p>
               <p>
-                I embrace a growth-oriented mindset, continuously learning new technologies and best 
-                practices. Whether it's collaborating on open-source projects or building personal 
-                applications, I'm always eager to expand my skillset and contribute to meaningful work.
+                As my interest grew, I explored web development, where I learned how front-end and back-end 
+                components come together to form complete user-facing applications. Building my personal 
+                portfolio website was a major milestone, allowing me to apply HTML, CSS, and JavaScript while 
+                learning about UI design, responsiveness, and user experience.
+              </p>
+              <p>
+                Alongside web development, I worked on projects such as the Salon Management System, focusing 
+                on backend logic, data handling, and clean code practices. I later developed a Smart Budget 
+                Management App using Java and SQLite, deepening my understanding of object-oriented programming 
+                and database integration.
+              </p>
+              <p>
+                Currently, I am pursuing an Honours specialization in Blockchain Technology, learning about 
+                decentralized systems, cryptography, smart contracts, and secure application design. My goal 
+                is to grow into a well-rounded software engineer who can contribute meaningfully to real-world 
+                solutions and continuously evolve with the technology landscape.
               </p>
             </div>
           </div>

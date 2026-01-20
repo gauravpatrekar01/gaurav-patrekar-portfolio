@@ -1,4 +1,6 @@
 import { ExternalLink, Github, Folder } from 'lucide-react';
+import salonScreenshot from '@/assets/salon-screenshot.png';
+import trackifyScreenshot from '@/assets/trackify-screenshot.png';
 
 interface Project {
   title: string;
@@ -7,6 +9,7 @@ interface Project {
   github?: string;
   liveDemo?: string;
   featured?: boolean;
+  image?: string;
 }
 
 const projects: Project[] = [
@@ -16,6 +19,7 @@ const projects: Project[] = [
     techStack: ['Python', 'File Handling', 'OOP Concepts'],
     github: 'https://github.com/gauravpatrekar01/Salon_Management_System',
     featured: true,
+    image: salonScreenshot,
   },
   {
     title: 'Smart Budget Management App (Trackify)',
@@ -23,6 +27,7 @@ const projects: Project[] = [
     techStack: ['Java', 'SQLite', 'OOP'],
     github: 'https://github.com/gauravpatrekar01/trackify-expense-tracker',
     featured: true,
+    image: trackifyScreenshot,
   },
   {
     title: 'Personal Portfolio Website',
@@ -63,9 +68,17 @@ const ProjectsSection = () => {
               >
                 <div className="relative group">
                   <div className="aspect-video rounded-xl overflow-hidden bg-primary/5 border border-border">
-                    <div className="absolute inset-0 flex items-center justify-center bg-grid-pattern opacity-30">
-                      <Folder className="w-20 h-20 text-muted-foreground/50" />
-                    </div>
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={`${project.title} screenshot`}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center bg-grid-pattern opacity-30">
+                        <Folder className="w-20 h-20 text-muted-foreground/50" />
+                      </div>
+                    )}
                   </div>
                   <div className="absolute inset-0 bg-primary/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
