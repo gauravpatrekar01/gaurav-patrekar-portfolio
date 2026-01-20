@@ -11,46 +11,25 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-featured online shopping platform with user authentication, product catalog, shopping cart, and payment integration. Built with modern web technologies and best practices.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
-    github: 'https://github.com',
-    liveDemo: 'https://example.com',
+    title: 'Salon Management System',
+    description: 'A comprehensive salon management system developed using Python. The application helps salon owners manage appointments, customers, services, and basic records efficiently. Emphasis on clean logic and maintainable code.',
+    techStack: ['Python', 'File Handling', 'OOP Concepts'],
+    github: 'https://github.com/gauravpatrekar01/Salon_Management_System',
     featured: true,
   },
   {
-    title: 'Blockchain Voting System',
-    description: 'A decentralized voting application ensuring transparency and immutability of votes using Ethereum smart contracts and Web3.js integration.',
-    techStack: ['Solidity', 'Web3.js', 'React', 'Ethereum', 'Hardhat'],
-    github: 'https://github.com',
+    title: 'Smart Budget Management App (Trackify)',
+    description: 'A Java-based budget management application that allows users to track expenses, manage budgets, and analyze spending habits. Designed with modular backend logic and persistent local storage.',
+    techStack: ['Java', 'SQLite', 'OOP'],
+    github: 'https://github.com/gauravpatrekar01/trackify-expense-tracker',
     featured: true,
   },
   {
-    title: 'Task Management Dashboard',
-    description: 'A collaborative project management tool with real-time updates, drag-and-drop functionality, and team collaboration features.',
-    techStack: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
-    github: 'https://github.com',
-    liveDemo: 'https://example.com',
-  },
-  {
-    title: 'Weather Forecast App',
-    description: 'A responsive weather application providing real-time weather data, forecasts, and location-based services using external APIs.',
-    techStack: ['JavaScript', 'HTML/CSS', 'OpenWeather API', 'Geolocation'],
-    github: 'https://github.com',
-    liveDemo: 'https://example.com',
-  },
-  {
-    title: 'Portfolio Website',
-    description: 'A personal portfolio showcasing projects and skills with a clean, modern design and smooth animations.',
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    github: 'https://github.com',
-    liveDemo: 'https://example.com',
-  },
-  {
-    title: 'Algorithm Visualizer',
-    description: 'An interactive tool for visualizing sorting and pathfinding algorithms, helping users understand complex algorithms through animation.',
-    techStack: ['React', 'JavaScript', 'CSS Animations'],
-    github: 'https://github.com',
+    title: 'Personal Portfolio Website',
+    description: 'A responsive personal portfolio website built to showcase my skills, education, and projects. Designed with a focus on layout structure, UI consistency, and smooth navigation.',
+    techStack: ['HTML', 'CSS', 'JavaScript'],
+    github: 'https://github.com/gauravpatrekar01/Gaurav-Dev-Portfolio',
+    liveDemo: 'https://gauravpatrekar01.github.io/Gaurav-Dev-Portfolio',
   },
 ];
 
@@ -138,6 +117,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* Other Projects Grid */}
+        {otherProjects.length > 0 && (
         <div>
           <h3 className="text-xl font-semibold text-foreground text-center mb-8">Other Noteworthy Projects</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -185,6 +165,7 @@ const ProjectsSection = () => {
             ))}
           </div>
         </div>
+        )}
       </div>
     </section>
   );

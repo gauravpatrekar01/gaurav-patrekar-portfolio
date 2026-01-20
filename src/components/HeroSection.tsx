@@ -47,7 +47,7 @@ const HeroSection = () => {
                   View Projects
                   <ArrowDown size={18} />
                 </a>
-                <a href="#" className="btn-secondary">
+                <a href="/GauravPatrekarResume.pdf" download className="btn-secondary">
                   <Download size={18} />
                   Download Resume
                 </a>
