@@ -58,7 +58,7 @@ const ContactSection = () => {
 
             <div className="space-y-4">
               <a
-                href="mailto:gaurav.patrekar@example.com"
+                href="mailto:gauravpatrekar01@gmail.com"
                 className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors group"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center group-hover:bg-accent transition-colors">
@@ -66,12 +66,12 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium text-foreground">gaurav.patrekar@example.com</p>
+                  <p className="font-medium text-foreground">gauravpatrekar01@gmail.com</p>
                 </div>
               </a>
 
               <a
-                href="https://github.com"
+                href="https://github.com/gauravpatrekar01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors group"
@@ -81,12 +81,12 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">GitHub</p>
-                  <p className="font-medium text-foreground">github.com/gauravpatrekar</p>
+                  <p className="font-medium text-foreground">github.com/gauravpatrekar01</p>
                 </div>
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/gaurav-patrekar-20470333a"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors group"
@@ -96,7 +96,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">LinkedIn</p>
-                  <p className="font-medium text-foreground">linkedin.com/in/gauravpatrekar</p>
+                  <p className="font-medium text-foreground">linkedin.com/in/gaurav-patrekar</p>
                 </div>
               </a>
 

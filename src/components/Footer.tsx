@@ -36,7 +36,7 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/gauravpatrekar01"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -45,7 +45,7 @@ const Footer = () => {
               <Github size={20} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/gaurav-patrekar-20470333a"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -54,7 +54,7 @@ const Footer = () => {
               <Linkedin size={20} />
             </a>
             <a
-              href="mailto:gaurav@example.com"
+              href="mailto:gauravpatrekar01@gmail.com"
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Email"
             >
