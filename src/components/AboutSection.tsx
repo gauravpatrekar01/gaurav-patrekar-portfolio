@@ -30,7 +30,7 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <div>
-            <p className="text-accent font-medium tracking-wide mb-3">My Journey</p>
+            <p className="text-accent font-medium tracking-wide mb-3">About Me</p>
             <h2 className="section-title">
               Building the Future,{' '}
               <span className="text-gradient-gold">One Line at a Time</span>
@@ -38,36 +38,19 @@ const AboutSection = () => {
             
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                My journey into technology began with a strong curiosity about how software systems work 
-                behind the scenes and how logical thinking can be used to solve real-world problems. As a 
-                Computer Science Engineering student, I started by building a solid foundation in programming, 
-                data structures, and problem-solving, which helped me understand not just how to write code, 
-                but how to think like a developer.
+                I'm a Computer Science Engineering student with a strong foundation in programming, 
+                data structures, and problem-solving. I specialize in building efficient, scalable 
+                applications with a focus on clean code practices and modern development workflows.
               </p>
               <p>
-                In the early phase of my learning, I focused on understanding core programming concepts using 
-                languages like Python and Java. Instead of limiting myself to theory, I actively applied what 
-                I learned by building small programs and gradually moving toward complete applications. This 
-                hands-on approach strengthened my confidence and improved my ability to design structured, 
-                maintainable logic.
+                My experience spans web development, backend systems, and database management. I'm 
+                proficient with Git and GitHub for version control and collaboration, and I prioritize 
+                writing maintainable code that emphasizes performance and scalability.
               </p>
               <p>
-                As my interest grew, I explored web development, where I learned how front-end and back-end 
-                components come together to form complete user-facing applications. Building my personal 
-                portfolio website was a major milestone, allowing me to apply HTML, CSS, and JavaScript while 
-                learning about UI design, responsiveness, and user experience.
-              </p>
-              <p>
-                Alongside web development, I worked on projects such as the Salon Management System, focusing 
-                on backend logic, data handling, and clean code practices. I later developed a Smart Budget 
-                Management App using Java and SQLite, deepening my understanding of object-oriented programming 
-                and database integration.
-              </p>
-              <p>
-                Currently, I am pursuing an Honours specialization in Blockchain Technology, learning about 
-                decentralized systems, cryptography, smart contracts, and secure application design. My goal 
-                is to grow into a well-rounded software engineer who can contribute meaningfully to real-world 
-                solutions and continuously evolve with the technology landscape.
+                Currently pursuing an Honours specialization in Blockchain Technology, I'm expanding 
+                my expertise in decentralized systems and secure application design. I'm driven by 
+                continuous learning and always eager to explore new technologies and challenges.
               </p>
             </div>
           </div>
