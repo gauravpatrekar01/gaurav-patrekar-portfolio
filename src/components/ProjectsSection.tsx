@@ -36,6 +36,12 @@ const projects: Project[] = [
     github: 'https://github.com/gauravpatrekar01/Gaurav-Dev-Portfolio',
     liveDemo: 'https://gauravpatrekar01.github.io/Gaurav-Dev-Portfolio',
   },
+  {
+    title: 'Automated Trading Bot (Paper Trading)',
+    description: 'A Python-based system that simulates trading using virtual money. It fetches real-time market data, applies technical indicators, and triggers buy/sell signals to test trading strategies safely. Ideal for learning algorithmic trading and experimenting without financial risk.',
+    techStack: ['Python', 'APIs', 'Data Analysis'],
+    github: 'https://github.com/gauravpatrekar01/Automated_Trading_Bot',
+  },
 ];
 
 const ProjectsSection = () => {
