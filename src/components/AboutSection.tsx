@@ -1,4 +1,5 @@
 import { Code2, Database, GitBranch, Layers } from 'lucide-react';
+import { motion, type Variants } from 'framer-motion';
 
 const highlights = [
   {
@@ -23,54 +24,105 @@ const highlights = [
   },
 ];
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6 }
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { 
+    opacity: 1, 
+    scale: 1,
+    transition: { duration: 0.5 }
+  },
+};
+
 const AboutSection = () => {
   return (
     <section id="about" className="section-padding bg-secondary/30">
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
-          <div>
-            <p className="text-accent font-medium tracking-wide mb-3">About Me</p>
-            <h2 className="section-title">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+          >
+            <motion.p variants={itemVariants} className="text-accent font-medium tracking-wide mb-3">
+              About Me
+            </motion.p>
+            <motion.h2 variants={itemVariants} className="section-title">
               Building the Future,{' '}
               <span className="text-gradient-gold">One Line at a Time</span>
-            </h2>
+            </motion.h2>
             
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>
+            <motion.div variants={containerVariants} className="space-y-5 text-muted-foreground leading-relaxed">
+              <motion.p variants={itemVariants}>
                 I'm a Computer Science Engineering student with a strong foundation in programming, 
                 data structures, and problem-solving. I specialize in building efficient, scalable 
                 applications with a focus on clean code practices and modern development workflows.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p variants={itemVariants}>
                 My experience spans web development, backend systems, and database management. I'm 
                 proficient with Git and GitHub for version control and collaboration, and I prioritize 
                 writing maintainable code that emphasizes performance and scalability.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p variants={itemVariants}>
                 Currently pursuing an Honours specialization in Blockchain Technology, I'm expanding 
                 my expertise in decentralized systems and secure application design. I'm driven by 
                 continuous learning and always eager to explore new technologies and challenges.
-              </p>
-            </div>
-          </div>
+              </motion.p>
+            </motion.div>
+          </motion.div>
 
           {/* Highlights Grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <motion.div 
+            className="grid grid-cols-2 gap-4"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+          >
             {highlights.map((item, index) => (
-              <div
+              <motion.div
                 key={item.title}
-                className="card-base group"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                variants={cardVariants}
+                whileHover={{ 
+                  scale: 1.03, 
+                  y: -5,
+                  transition: { duration: 0.3 }
+                }}
+                className="card-base group cursor-pointer"
+                custom={index}
               >
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                <motion.div 
+                  className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors"
+                  whileHover={{ rotate: 5, scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <item.icon className="w-6 h-6 text-accent" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+                </motion.div>
+                <h3 className="font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
