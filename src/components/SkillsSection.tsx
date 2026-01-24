@@ -11,17 +11,17 @@ const skillCategories: SkillCategory[] = [
   {
     title: 'Programming Languages',
     icon: Code,
-    skills: ['C/C++', 'Python', 'Java', 'JavaScript', 'TypeScript', 'SQL'],
+    skills: ['C/C++', 'Python', 'Java', 'PostgreSQL'],
   },
   {
     title: 'Web Technologies',
     icon: Globe,
-    skills: ['HTML5', 'CSS3', 'React', 'Node.js', 'Express.js', 'Tailwind CSS', 'REST APIs'],
+    skills: ['HTML5', 'CSS3', 'React'],
   },
   {
     title: 'Tools & Version Control',
     icon: Wrench,
-    skills: ['Git', 'GitHub', 'VS Code', 'Linux', 'Docker', 'Postman', 'npm'],
+    skills: ['Git', 'GitHub', 'VS Code', 'Linux'],
   },
   {
     title: 'Core CS Concepts',
@@ -145,11 +145,11 @@ const SkillsSection = () => {
             <h3 className="text-lg font-semibold text-foreground mb-6">Proficiency Overview</h3>
             <div className="space-y-4">
               {[
-                { name: 'Web Development', level: 85 },
-                { name: 'Data Structures & Algorithms', level: 80 },
-                { name: 'Backend Development', level: 75 },
-                { name: 'Database Management', level: 70 },
-                { name: 'Blockchain', level: 60 },
+                { name: 'Web Development', level: 70 },
+                { name: 'Data Structures & Algorithms', level: 45 },
+                { name: 'Backend Development', level: 65 },
+                { name: 'Database Management', level: 50 },
+                { name: 'Blockchain', level: 55 },
               ].map((skill, index) => (
                 <motion.div 
                   key={skill.name}
