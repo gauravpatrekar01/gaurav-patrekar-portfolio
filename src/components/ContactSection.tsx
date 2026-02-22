@@ -166,7 +166,7 @@ const ContactSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ boxShadow: "var(--shadow-card-hover)" }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} action="https://formspree.io/f/xpqqwjpy" methos="POST" className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
