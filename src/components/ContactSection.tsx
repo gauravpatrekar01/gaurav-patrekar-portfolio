@@ -38,21 +38,42 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    toast({
-      title: 'Message Sent!',
-      description: "Thank you for reaching out. I'll get back to you soon.",
+  try {
+    const response = await fetch("https://formspree.io/f/xpqqwjpy", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(formData),
     });
 
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
-  };
+    if (response.ok) {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+      });
+    }
+  } catch (error) {
+    toast({
+      title: "Error",
+      description: "Failed to send message.",
+    });
+  }
+
+  setIsSubmitting(false);
+};
 
   const contactLinks = [
     {
@@ -166,7 +187,7 @@ const ContactSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ boxShadow: "var(--shadow-card-hover)" }}
           >
-            <form onSubmit={handleSubmit} action="https://formspree.io/f/xpqqwjpy" methos="POST" className="space-y-6">
+            <form onSubmit={handleSubmit} methos="POST" className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
