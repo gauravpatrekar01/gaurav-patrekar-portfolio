@@ -25,143 +25,86 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-soft py-4'
-          : 'bg-transparent py-6'
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
-      <div className="section-container flex items-center justify-between">
-        {/* Logo */}
-        <motion.a 
-          href="#" 
-          className="text-xl font-bold text-primary hover:text-accent transition-colors"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          GP<span className="text-accent">.</span>
-        </motion.a>
-
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link, index) => (
-            <motion.a 
-              key={link.name} 
-              href={link.href} 
-              className="nav-link text-sm font-medium"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + index * 0.05 }}
-              whileHover={{ y: -2 }}
-            >
-              {link.name}
-            </motion.a>
-          ))}
-          <motion.a
-            href="#contact"
-            className="btn-primary text-sm"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5 }}
-            whileHover={{ scale: 1.05, boxShadow: "0 10px 30px -10px hsl(var(--primary) / 0.3)" }}
-            whileTap={{ scale: 0.98 }}
+    <>
+      <motion.nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-background/95 backdrop-blur-md shadow-soft py-4'
+            : 'bg-transparent py-6'
+        }`}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+      >
+        <div className="section-container flex items-center justify-between">
+          {/* Logo */}
+          <a
+            href="#"
+            className="text-xl font-bold text-primary hover:text-accent transition-colors"
           >
-            Get In Touch
-          </motion.a>
-        </div>
+            GP<span className="text-accent">.</span>
+          </a>
 
-        {/* Mobile Menu Button */}
-        <motion.button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-foreground hover:text-accent transition-colors"
-          aria-label="Toggle menu"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <AnimatePresence mode="wait">
-            {isMobileMenuOpen ? (
-              <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium hover:text-accent transition-colors"
               >
-                <X size={24} />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="menu"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Menu size={24} />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.button>
-      </div>
+                {link.name}
+              </a>
+            ))}
+            <a href="#contact" className="btn-primary text-sm">
+              Get In Touch
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </motion.nav>
 
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md shadow-elevated"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden fixed top-0 left-0 w-full h-screen bg-background z-40 pt-24 px-6 overflow-hidden"
+            initial={{ y: '-100%' }}
+            animate={{ y: 0 }}
+            exit={{ y: '-100%' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            <motion.div 
-              className="section-container py-6 flex flex-col gap-4"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.05 }
-                }
-              }}
-            >
+            <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
-                <motion.a
+                <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-accent transition-colors py-2"
-                  variants={{
-                    hidden: { opacity: 0, x: -20 },
-                    visible: { opacity: 1, x: 0 }
-                  }}
-                  whileHover={{ x: 8 }}
+                  className="text-lg font-medium hover:text-accent transition-colors"
                 >
                   {link.name}
-                </motion.a>
+                </a>
               ))}
-              <motion.a
+              <a
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="btn-primary text-center mt-4"
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-                whileTap={{ scale: 0.98 }}
               >
                 Get In Touch
-              </motion.a>
-            </motion.div>
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   );
 };
 
