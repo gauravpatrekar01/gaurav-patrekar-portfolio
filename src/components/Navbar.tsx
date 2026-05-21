@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link as RouterLink } from 'react-router-dom';
 
 const navLinks = [
   { name: 'About', href: '#about' },
@@ -9,7 +10,7 @@ const navLinks = [
   { name: 'Projects', href: '#projects' },
   { name: 'Experience', href: '#experience' },
   { name: 'Contact', href: '#contact' },
-  { name: 'Blogs', href: '#blogs' },
+  { name: 'Blog', href: '/blog', isRoute: true },
 ];
 
 const Navbar = () => {
@@ -39,24 +40,34 @@ const Navbar = () => {
       >
         <div className="section-container flex items-center justify-between">
           {/* Logo */}
-          <a
-            href="#"
+          <RouterLink
+            to="/"
             className="text-xl font-bold text-primary hover:text-accent transition-colors"
           >
             GP<span className="text-accent">.</span>
-          </a>
+          </RouterLink>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium hover:text-accent transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => 
+              link.isRoute ? (
+                <RouterLink
+                  key={link.name}
+                  to={link.href}
+                  className="text-sm font-medium hover:text-accent transition-colors"
+                >
+                  {link.name}
+                </RouterLink>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-sm font-medium hover:text-accent transition-colors"
+                >
+                  {link.name}
+                </a>
+              )
+            )}
             <a href="#contact" className="btn-primary text-sm">
               Get In Touch
             </a>
@@ -84,16 +95,27 @@ const Navbar = () => {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
             <div className="flex flex-col gap-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium hover:text-accent transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.isRoute ? (
+                  <RouterLink
+                    key={link.name}
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-lg font-medium hover:text-accent transition-colors"
+                  >
+                    {link.name}
+                  </RouterLink>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-lg font-medium hover:text-accent transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                )
+              )}
               <a
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
